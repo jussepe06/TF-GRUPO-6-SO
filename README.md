@@ -26,13 +26,4 @@ El sistema está desplegado en **Amazon Web Services (AWS)** bajo un modelo de a
 * **Panel de Administración:** Dashboard que registra las compras simuladas asociándolas al usuario logueado en la sesión.
 * **Despliegue Contenerizado:** Entorno aislado que evita conflictos de dependencias y asegura la portabilidad del código.
 
-## Cómo ejecutar este proyecto localmente
-
-1. Clona este repositorio en tu máquina local.
-2. Asegúrate de tener Docker y Docker Compose instalados.
-3. Abre una terminal en la raíz del proyecto.
-4. Ejecuta el comando de construcción: `sudo docker compose up -d`
-5. Accede a la aplicación desde tu navegador web en el puerto 80 (Ejemplo: `http://localhost`).
-
 ---
-**Proyecto desarrollado por el Grupo 6:** Josué Gutierrez, Diego Silva y Joseph Tello.
