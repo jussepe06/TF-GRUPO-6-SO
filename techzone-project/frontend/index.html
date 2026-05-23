@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone Perú - E-commerce & Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+<body>
+    <div class="aurora-bg"></div>
+
+    <header>
+        <div class="brand">
+            <span class="material-icons-round">bolt</span>
+            TechZone <span>Perú</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#monitoreo">Monitoreo</a></li>
+                <li><a href="#admin">Administración</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="cart-icon">
+                <span class="material-icons-round">shopping_cart</span>
+                <span id="cart-count">0</span>
+            </div>
+            <span class="material-icons-round">account_circle</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge">NEXT-GEN TECHNOLOGY</span>
+                <h1>E-commerce inteligente con <span>monitoreo en tiempo real</span></h1>
+                <p>Descubre la mejor selección de hardware premium gestionada por un sistema de administración avanzado con métricas en vivo.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary" onclick="document.getElementById('productos').scrollIntoView()">Ver Productos</button>
+                    <button class="btn-outline" onclick="document.getElementById('admin').scrollIntoView()">Explorar Panel</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="glass-card main-visual">
+                    <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800" alt="Tech Command Center">
+                </div>
+            </div>
+        </section>
+
+        <!-- Monitoring Section -->
+        <section id="monitoreo" class="monitoring">
+            <div class="section-header">
+                <div>
+                    <span class="section-label">Real-time Monitoring</span>
+                    <h2 class="section-title">System Health</h2>
+                </div>
+            </div>
+            <div class="metrics-grid">
+                <div class="glass-card metric-card">
+                    <div class="metric-info">
+                        <span class="label">PROCESAMIENTO CPU</span>
+                        <div class="value-row">
+                            <span class="value" id="cpu-val">--%</span>
+                            <span class="subtext">Core i9-14900K</span>
+                        </div>
+                    </div>
+                    <span class="material-icons-round metric-icon">memory</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="cpu-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <div class="metric-info">
+                        <span class="label">MEMORIA RAM</span>
+                        <div class="value-row">
+                            <span class="value" id="ram-val">--%</span>
+                            <span class="subtext">64GB DDR5</span>
+                        </div>
+                    </div>
+                    <span class="material-icons-round metric-icon">grid_view</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="ram-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <div class="metric-info">
+                        <span class="label">PROCESOS ACTIVOS</span>
+                        <div class="value-row">
+                            <span class="value" id="proc-val">--</span>
+                            <span class="subtext">Thread Status</span>
+                        </div>
+                    </div>
+                    <span class="material-icons-round metric-icon">terminal</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%; opacity: 0.3;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="productos" class="products">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Catálogo de Hardware</h2>
+                    <p style="color: var(--text-dim)">Selección premium para entusiastas</p>
+                </div>
+                <div class="filter-tabs">
+                    <button class="tab-pill active">Todos</button>
+                    <button class="tab-pill">Laptops</button>
+                    <button class="tab-pill">Consolas</button>
+                    <button class="tab-pill">Periféricos</button>
+                </div>
+            </div>
+            <div class="products-grid" id="products-container">
+                <!-- Injected via app.js -->
+            </div>
+        </section>
+
+        <!-- Admin Panel -->
+        <section id="admin" class="admin-panel">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Command Center</h2>
+                    <span class="secure-badge">SECURE_ROOT_ACCESS: GRANTED</span>
+                </div>
+            </div>
+            <div class="glass-card admin-container">
+                <div class="admin-sidebar">
+                    <button class="admin-tab active" onclick="switchTab('users', this)">
+                        <span class="material-icons-round">group</span> Gestión Usuarios
+                    </button>
+                    <button class="admin-tab" onclick="switchTab('inventory', this)">
+                        <span class="material-icons-round">inventory_2</span> Inventario Maestro
+                    </button>
+                    <button class="admin-tab" onclick="switchTab('sales', this)">
+                        <span class="material-icons-round">bar_chart</span> Reportes de Ventas
+                    </button>
+                    <button class="admin-tab" onclick="switchTab('system', this)">
+                        <span class="material-icons-round">settings_input_component</span> System Monitoring
+                    </button>
+                </div>
+                <div class="admin-content">
+                    <div class="content-header">
+                        <h2>Usuarios del Sistema</h2>
+                        <button class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.8rem;">+ Nuevo Usuario</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>UID</th>
+                                <th>NOMBRE</th>
+                                <th>ROL</th>
+                                <th>ESTADO</th>
+                                <th>ACCIÓN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#8821</td>
+                                <td><strong>Admin Global</strong></td>
+                                <td><span class="role-badge super">SUPERUSER</span></td>
+                                <td><span class="status-indicator"></span> Activo</td>
+                                <td><button class="btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">Gestionar</button></td>
+                            </tr>
+                            <tr>
+                                <td>#9904</td>
+                                <td><strong>Mktg Lead</strong></td>
+                                <td><span class="role-badge">EDITOR</span></td>
+                                <td><span class="status-indicator"></span> Activo</td>
+                                <td><button class="btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">Gestionar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h2>Tu Carrito</h2>
+        <button class="btn-close" onclick="toggleCart(false)">
+            <span class="material-icons-round">close</span>
+        </button>
+    </div>
+    <div class="cart-items" id="cart-items">
+        </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total Estimado:</span>
+            <span id="cart-total-val">S/ 0</span>
+        </div>
+        
+        <div id="pasarela-checkout" style="margin-bottom: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+            <h4 style="margin-bottom: 0.5rem; color: var(--secondary);">Pasarela de Pago</h4>
+            <input type="text" id="card-number" placeholder="Número de Tarjeta (16 dígitos)" style="width:100%; padding:0.6rem; background:rgba(0,0,0,0.3); border:1px solid var(--border); color:white; border-radius:8px; margin-bottom:0.5rem;">
+            <div style="display:flex; gap:0.5rem;">
+                <input type="text" id="card-expiry" placeholder="MM/AA" style="width:50%; padding:0.6rem; background:rgba(0,0,0,0.3); border:1px solid var(--border); color:white; border-radius:8px;">
+                <input type="text" id="card-cvv" placeholder="CVV" style="width:50%; padding:0.6rem; background:rgba(0,0,0,0.3); border:1px solid var(--border); color:white; border-radius:8px;">
+            </div>
+        </div>
+        <button class="btn-primary w-full" onclick="procesarCompraMaster()">Finalizar y Pagar</button>
+    </div>
+</div>
+
+<div id="login-modal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(10px); z-index:9999; display:flex; justify-content:center; align-items:center;">
+    <div class="glass-card" style="padding:3rem; width:400px; text-align:center;">
+        <span class="material-icons-round" style="font-size:4rem; color:var(--primary-neon);">account_circle</span>
+        <h2 style="margin: 1rem 0;">TechZone Autenticación</h2>
+        <p style="color:var(--text-dim); margin-bottom:1.5rem; font-size:0.9rem;">Acceso al E-commerce Contenerizado</p>
+        <input type="text" id="login-username" placeholder="Usuario" style="width:100%; padding:0.8rem; margin-bottom:1rem; background:var(--surface-bright); border:1px solid var(--border); color:white; border-radius:10px;">
+        <input type="password" id="login-password" placeholder="Contraseña" style="width:100%; padding:0.8rem; margin-bottom:1.5rem; background:var(--surface-bright); border:1px solid var(--border); color:white; border-radius:10px;">
+        <button class="btn-primary w-full" onclick="verificarLoginMaster()">Iniciar Sesión</button>
+    </div>
+</div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="brand">
+                <span class="material-icons-round">bolt</span> TechZone Perú &copy; 2024
+            </div>
+            <div class="footer-links">
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Soporte Técnico</a>
+            </div>
+            <div class="footer-social">
+                <span class="material-icons-round">share</span>
+                <span class="material-icons-round">language</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

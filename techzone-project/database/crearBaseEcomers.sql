@@ -1,0 +1,2 @@
+CREATE DATABASE techzone_ecommerce;
+USE techzone_ecommerce;
